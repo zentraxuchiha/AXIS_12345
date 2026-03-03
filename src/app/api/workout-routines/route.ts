@@ -1,5 +1,5 @@
 import { auth } from "@/auth";
-import dbConnect from "@/lib/mongodb";
+import { connectToDatabase } from "@/lib/db";
 import WorkoutRoutine from "@/models/WorkoutRoutine";
 import { NextResponse } from "next/server";
 
@@ -8,7 +8,7 @@ export async function GET() {
         const session = await auth();
         if (!session?.user?.id) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
 
-        await dbConnect();
+        await connectToDatabase();
         const routines = await WorkoutRoutine.find({ userId: session.user.id });
         return NextResponse.json(routines);
     } catch (error: any) {
@@ -22,7 +22,7 @@ export async function POST(req: Request) {
         if (!session?.user?.id) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
 
         const { dayOfWeek, exercises } = await req.json();
-        await dbConnect();
+        await connectToDatabase();
 
         const routine = await WorkoutRoutine.findOneAndUpdate(
             { userId: session.user.id, dayOfWeek },
