@@ -63,7 +63,7 @@ export default function LandingPage() {
       {/* ╔══════════════════════════════════════════════════════════════╗
                 ║  SECTION 1 — HERO                                           ║
                 ╚══════════════════════════════════════════════════════════════╝ */}
-      <section className="relative h-[100dvh] flex flex-col items-center justify-center overflow-hidden">
+      <section className="relative h-[100dvh] flex flex-col items-center justify-center">
         <ParticleWave />
         {/* Vignette */}
         <div className="absolute inset-0 z-10 pointer-events-none bg-[radial-gradient(circle,transparent_40%,rgba(0,0,0,0.8)_100%)]" />
@@ -94,10 +94,10 @@ export default function LandingPage() {
           </nav>
 
           <div className="mb-20 animate-in fade-in slide-in-from-bottom-8 duration-1000">
-            <h1 className="text-4xl md:text-8xl font-black tracking-[0.8em] md:tracking-[1.5em] mr-[-0.8em] md:mr-[-1.5em] uppercase drop-shadow-[0_0_20px_rgba(255,255,255,0.3)]">
+            <h1 className="text-5xl md:text-9xl font-black [letter-spacing:1.2em] md:[letter-spacing:1.5em] mr-[-1.2em] md:mr-[-1.5em] uppercase drop-shadow-[0_0_20px_rgba(255,255,255,0.3)]">
               AXIS
             </h1>
-            <p className="text-white/50 text-[0.55rem] md:text-xs tracking-[0.4em] md:tracking-[0.5em] uppercase mt-5 font-bold">
+            <p className="text-white/50 text-[0.6rem] md:text-xs [letter-spacing:0.5em] md:[letter-spacing:0.8em] uppercase mt-5 font-bold">
               Discipline over dopamine.
             </p>
           </div>
