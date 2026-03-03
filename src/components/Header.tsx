@@ -1,12 +1,11 @@
 "use client";
 
-import { useSession, signOut } from "next-auth/react";
+import { signOut } from "next-auth/react";
 import Image from "next/image";
 
 import { useSidebar } from "@/context/SidebarContext";
 
-export function Header() {
-    const { data: session } = useSession();
+export function Header({ session }: { session: any }) {
     const { toggle } = useSidebar();
 
     if (!session?.user) return null;

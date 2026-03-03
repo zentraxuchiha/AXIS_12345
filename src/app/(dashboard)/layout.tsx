@@ -31,7 +31,7 @@ export default async function DashboardLayout({
                 {/* Main content wrapper with margin-left compensating for the fixed sidebar width (w-72 = 18rem = 288px) */}
                 <div className="flex-1 md:ml-72 min-h-screen">
                     <main className="w-full p-4 md:px-16 md:py-10">
-                        <Header />
+                        <Header session={session} />
                         {children}
                     </main>
                 </div>
