@@ -52,7 +52,7 @@ export function Sidebar({ userRole }: { userRole: string }) {
                 onClick={close}
             />
 
-            <aside className={`fixed left-0 top-0 h-full w-72 bg-black border-r-2 border-white flex-col z-[60] overflow-hidden transition-transform duration-300 ease-in-out md:translate-x-0 ${isOpen ? "translate-x-0" : "-translate-x-full"} md:flex`}>
+            <aside className={`fixed left-0 top-0 h-[100dvh] w-72 bg-black border-r-2 border-white flex-col z-[60] overflow-hidden transition-transform duration-300 ease-in-out md:translate-x-0 ${isOpen ? "translate-x-0" : "-translate-x-full"} md:flex`}>
                 {/* Geometric Texture Overlay */}
                 <div className="absolute inset-0 opacity-10 pointer-events-none" style={{
                     backgroundImage: `radial-gradient(circle at 2px 2px, white 1px, transparent 0)`,
@@ -60,7 +60,7 @@ export function Sidebar({ userRole }: { userRole: string }) {
                 }} />
                 <div className="absolute top-0 right-0 w-32 h-32 border-b-2 border-l-2 border-white/20 transform translate-x-16 -translate-y-16 rotate-45 pointer-events-none" />
 
-                <div className="relative p-8 mt-4 flex justify-between items-center">
+                <div className="relative p-6 md:p-8 mt-2 md:mt-4 flex justify-between items-center">
                     <h1 className="text-4xl font-black tracking-[0.5em] uppercase text-white">Axis</h1>
                     {/* Mobile Close Button */}
                     <button
@@ -71,8 +71,8 @@ export function Sidebar({ userRole }: { userRole: string }) {
                     </button>
                 </div>
 
-                <nav className="flex-1 relative px-4 overflow-y-auto no-scrollbar">
-                    <ul className="space-y-2">
+                <nav className="flex-1 relative px-4 overflow-y-auto no-scrollbar overscroll-contain">
+                    <ul className="space-y-2 pb-10">
                         {navItems.map((item) => {
                             const isActive = pathname === item.href || (item.href !== "/today" && pathname.startsWith(item.href));
                             return (
@@ -107,7 +107,7 @@ export function Sidebar({ userRole }: { userRole: string }) {
                     </ul>
                 </nav>
 
-                <div className="relative p-8 border-t-2 border-white/20 bg-black flex flex-col gap-6">
+                <div className="relative p-6 md:p-8 border-t-2 border-white/20 bg-black flex flex-col gap-4 md:gap-6">
                     <div className="flex items-center gap-3">
                         <div className="w-3 h-3 bg-white" />
                         <p className="text-white text-[0.6rem] font-bold uppercase tracking-[0.3em] leading-loose italic">
